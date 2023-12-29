@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+
+body {
+  min-height: 100vh;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.background {
+  height: 100%;
+  width: 50%;
+  z-index: 0;
+  opacity: 1;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(55deg, rgba(203,0,184,1) 0%, rgba(203,0,102,1) 75%);
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: linear-gradient(218.31deg, rgb(23, 24, 27) 0%, rgb(14, 13, 34) 100%);
+}
+
+/* Rain CSS */
+html { height: 100% }
+
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: black;
+}
+
+.rain {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  width: 100%;
+  height: 90%;
+  z-index: 2;
+}
+
+.rain.back-row {
+  display: none;
+  z-index: 1;
+  bottom: 60px;
+  opacity: 0.5;
+}
+
+body.back-row-toggle .rain.back-row {
+  display: block;
+}
+
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 15px;
+  height: 320px;
+  pointer-events: none;
+  animation: drop 0.5s linear infinite;
+}
+
+@keyframes drop {
+  0% { transform: translateY(0vh); }
+  75% { transform: translateY(90vh); }
+  100% { transform: translateY(90vh); }
+}
+
+.stem {
+  width: 1px;
+  height: 60%;
+  margin-left: 7px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.25)
+  );
+  animation: stem 0.5s linear infinite;
+}
+
+@keyframes stem {
+  0% { opacity: 1; }
+  65% { opacity: 1; }
+  75% { opacity: 0; }
+  100% { opacity: 0; }
+}
+/*----------*/
+
+
+.center-piece {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  width: 400px;
+  height: 350px;
+  border-radius: 5px;
+  z-index: 5;
+  transition: ease-in-out .3s;
+
+  
+  &:hover {
+    top: calc( 50% - 2px );
+    border: 1px solid rgba(#F2F4F8, 0);
+    box-shadow: 0 15px 20px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,.1);
+    cursor: pointer;
+  }
+  
+  &:active {
+    top: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05), 0 0 2px rgba(0,0,0,.1);
+    transition: ease-in-out .1s;
+  }
+}
+
+/* Title and Inner text */
+
+[class="Title"] {
+  text-align: center;
+  color: white;
+  font-family: Inconsolata, sans-serif;
+}
+
+[class="middle"] {
+  color: white;
+  font-family: Montserrat, sans-serif;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.pfp-image {
+  border-radius: 900000px;
+  
+  height: 80px;
+  position: relative;
+  left: 20px;
+  /*width: 10px;*/
+}
+
+#grid-layout-for-noobs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+[aria-label="this is a name"] {
+  position: relative;
+  left: -85px;
+  top: -30px;
+  font-size: 25px;
+}
+
+div#grabber-of-text > .style-input {
+  display: flex;
+  position: relative;
+  left: 50%;
+  top: 30px;
+  transform: translate(-50%);
+  background: none;  
+  border: none;
+  color: white;
+  text-align: center;
+  
+  &:active {
+    border: none;
+  }
+}
+
+.images-of-badges > img, .bio-image {
+  height: 25px;
+}
+
+.images-of-badges {
+  position: absolute;
+  left: 110px;
+  top: 115px;
+}
+
+.bio-image {
+  position: relative;
+  top:-5px;
+}
+
+.absolute-garbage {
+  position: absolute;
+  top: 134px;
+  left: 115px;
+}
+
+.Owner {
+  position: absolute;
+  left: 300px;
+  top: 100px;
+}
+
+.Owner > path {
+  fill: yellow;
+  transform: scale(2);
+}
+
+.middle {
+  position: relative;
+  top: -5px;
+}
+
+.Programmer-Section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  left: 50%;
+  transform: translate(-50%);
+  top: -5px;
+}
+
+.icon { fill: white; }
+
+.HTML, .Python, .Java { padding-top: 10px; }
+
+.GitBash { padding-top: 10px; }
+
+.Section {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 450px) {
+  .center-piece {
+    width: 280px;
+    height: 360px;
+  }
+  
+  [aria-label="this is a name"] {
+    left: -26px;
+  }
+  
+  .Owner {
+    left: 165px;
+    top: 84px;
+  }
+  
+  .Owner > path {
+    transform: scale(1);
+  }
+  
+  .HTML, .Python, .Java { padding-top: 5px; }
+
+  .GitBash { padding-top: 5px; }
+}
